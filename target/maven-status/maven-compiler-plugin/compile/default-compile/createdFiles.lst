@@ -1,0 +1,7 @@
+playerheads\PlayerHeads.class
+playerheads\CommandChecker.class
+playerheads\EventListener.class
+playerheads\PlayerHeadsMenu.class
+playerheads\HeadMaker.class
+playerheads\PlayerHeadsTabCompleter.class
+playerheads\PlayerHeadsCommandExecutor.class
