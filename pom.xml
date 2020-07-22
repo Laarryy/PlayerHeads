@@ -20,11 +20,11 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java/dev/laarryy/resources</directory>
+                <directory>src/main/java/dev/laarryy/playerheads/resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <sourceDirectory>src/main/java/dev/laarryy/playerheads</sourceDirectory>
+        <sourceDirectory>src/main/java/</sourceDirectory>
         <defaultGoal>clean package</defaultGoal>
         <plugins>
             <plugin>
@@ -67,10 +67,6 @@
         <repository>
             <id>papermc</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>skullcreator-repo</id>
-            <url>https://dl.bintray.com/deanveloper/SkullCreator</url>
         </repository>
     </repositories>
 
