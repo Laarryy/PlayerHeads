@@ -1,8 +1,18 @@
 package dev.laarryy.playerheads;
 
+
+import dev.laarryy.playerheads.internal.PlayerData;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+
 
 public final class PlayerHeads extends JavaPlugin {
+    PlayerData playerData = new PlayerData();
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     public void onLoad() {
@@ -11,7 +21,8 @@ public final class PlayerHeads extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // register things
+        ArrayList<OfflinePlayer> playerArray = playerData.getData();
+        playerArray.forEach(offlinePlayer -> logger.info("Player's UUID: " + offlinePlayer.getUniqueId().toString()));
     }
 
     @Override
