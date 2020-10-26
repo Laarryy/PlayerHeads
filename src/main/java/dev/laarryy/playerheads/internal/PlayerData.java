@@ -3,28 +3,44 @@ package dev.laarryy.playerheads.internal;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
 public class PlayerData {
 
-    ArrayList<OfflinePlayer> playerArrayList = new ArrayList<>();
+    private final Set<UUID> allThePlayers = new HashSet<>();
 
     public PlayerData() {
-        SkullMaker headsAPI = new SkullMaker();
+        reload();
+
+        final SkullMaker headsAPI = new SkullMaker();
     }
 
-    public ArrayList<OfflinePlayer> getData() {
-        OfflinePlayer[] playerList = Bukkit.getOfflinePlayers();
-        Iterator<OfflinePlayer> offlinePlayerIterator = Arrays.stream(playerList).iterator();
-        offlinePlayerIterator.forEachRemaining(this::addToArray);
-        return playerArrayList;
+    public Set<UUID> getDataView() {
+        return Collections.unmodifiableSet(allThePlayers);
     }
 
-    private void addToArray(OfflinePlayer offlinePlayer) {
-        playerArrayList.add(offlinePlayer);
-
+    public void add(final UUID uuid) {
+        allThePlayers.add(uuid);
+        // do stuff
     }
 
+    public void add(final OfflinePlayer player) {
+        allThePlayers.add(player.getUniqueId());
+        // what else?
+    }
+
+    public void reload() {
+        unload();
+        final OfflinePlayer[] literallyEveryoneButLarry = Bukkit.getOfflinePlayers();
+        Arrays.stream(literallyEveryoneButLarry).forEach(this::add);
+    }
+
+    public void unload() {
+        allThePlayers.clear();
+        // MORE
+    }
 }
