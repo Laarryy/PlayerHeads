@@ -116,7 +116,7 @@
         </dependency>
         <dependency>
             <!-- Reference only -->
-            <!-- Do not use any actual NMS/OBC methods -.- Reflection will do that just as fine -->
+            <!-- Do not use any actual NMS/OBC methods -.- [REDACTED] will do that just as fine -->
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>${spigot.version}</version>
@@ -142,12 +142,6 @@
             <artifactId>adventure-api</artifactId>
             <version>4.1.1</version>
             <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.checkerframework</groupId>
-                    <artifactId>checker-qual</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
