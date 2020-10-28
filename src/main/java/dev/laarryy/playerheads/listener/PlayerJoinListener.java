@@ -8,7 +8,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public final class PlayerJoinListener implements Listener {
+public class PlayerJoinListener implements Listener {
 
     final PlayerHeads plugin;
     final PlayerData playerData;

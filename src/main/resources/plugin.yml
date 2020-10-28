@@ -1,5 +1,6 @@
 main: dev.laarryy.playerheads.PlayerHeads
 name: PlayerHeads
 version: "${project.version}"
-api-version: "1.13"
+api-version: "1.14"
+load: STARTUP
 authors: [ Laarryy, Fehfo ]

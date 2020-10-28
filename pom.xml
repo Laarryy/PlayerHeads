@@ -58,19 +58,28 @@
                                         <exclude>org/jetbrains/annotations/**</exclude>
                                     </excludes>
                                 </filter>
+                                <filter>
+                                    <artifact>dev.dbassett:skullcreator</artifact>
+                                    <includes>
+                                        <include>dev/dbassett/skullcreator/SkullCreator.*</include>
+                                    </includes>
+                                </filter>
                             </filters>
                             <relocations>
                                 <relocation>
                                     <pattern>dev.dbassett.skullcreator</pattern>
-                                    <shadedPattern>dev.laarryy.playerheads.lib.skullcreator</shadedPattern>
+                                    <shadedPattern>dev.laarryy.playerheads.lib.skullcreator
+                                    </shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>cloud.commandframework</pattern>
-                                    <shadedPattern>dev.laarryy.playerheads.lib.cloud.cloud</shadedPattern>
+                                    <shadedPattern>dev.laarryy.playerheads.lib.cloud.cloud
+                                    </shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>io.leangen.geantyref</pattern>
-                                    <shadedPattern>dev.laarryy.playerheads.lib.cloud.typetoken</shadedPattern>
+                                    <shadedPattern>dev.laarryy.playerheads.lib.cloud.typetoken
+                                    </shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>net.kyori</pattern>
@@ -164,11 +173,17 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- Let's make the compiler happy c: -->
         <dependency>
-            <!-- Let's make the compiler happy c: -->
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>20.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>3.7.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
